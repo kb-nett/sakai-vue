@@ -110,7 +110,23 @@ import BlockViewer from '@/components/BlockViewer.vue';
 
 import '@/assets/styles.scss';
 
+// import axios from 'axios';
+
+
+// const axios = require('axios');
+// axios.defaults.baseURL = 'https://ymtpugxyrrzqgykansdf.supabase.co'
+
+import { createClient } from '@supabase/supabase-js'
+
 const app = createApp(App);
+
+
+
+// Create a single supabase client for interacting with your database
+const supabase = createClient(
+    'https://ymtpugxyrrzqgykansdf.supabase.co',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InltdHB1Z3h5cnJ6cWd5a2Fuc2RmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTg1Mzc1NDYsImV4cCI6MjAzNDExMzU0Nn0.BBYT3K5hGn_JeHrEPDnyot0NZZkoYldZ9jFwO4ulj38'
+);
 
 app.use(router);
 app.use(PrimeVue, { ripple: true });
